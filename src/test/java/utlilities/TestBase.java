@@ -28,4 +28,23 @@ public abstract class TestBase {
     public void tearDown()  {
        driver.quit();
     }
-}
+
+
+    //    MULTIPLE WINDOW
+    //1 parametre alır :gecis yapmak ıstedigim  safanın title'i
+    public static void switchToWindow(String targetTitle) {
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(targetTitle)) {
+                return;
+            }
+        }
+        driver.switchTo().window(origin);
+    }
+
+
+
+}//class parantezi
+
+
