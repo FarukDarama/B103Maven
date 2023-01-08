@@ -10,7 +10,7 @@
 
         2- Ne tur methodlar kullandin?
         Actions metotlari onemlidir. Ve tekrar tekrar kullanmam gerektiğinden, Actions metotlarını içeren Reusable metodları oluşturdum.
-        Ve gerektiğinde bu reusable metodları kullanıyorum. Ornegin rightClick methodunu bir elemente raga tiklamak icin test classimda vagira bilirim.
+        Ve gerektiğinde bu reusable metodları kullanıyorum. Ornegin rightClick methodunu bir elemente saga tiklamak icin test classimda çagira bilirim.
 
         3- Hangi methodlari kullandin ne ne ise yarar?
         Ornegin, sag tiklamak(contextClick), çift tıklamak(doubleClick),

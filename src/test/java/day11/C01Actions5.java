@@ -24,7 +24,7 @@ public class C01Actions5 extends TestBase {
                 sendKeys("IPHONE X FIYATLARI").//shiftr basılıiken yazı yaz
                 keyUp(aramaKutusu,Keys.SHIFT).//shifte artık basma
                 sendKeys("cok pahalı"+Keys.ENTER).//normal halde yaz ve enter tusuna bas
-                build().
+                build().//birden fazla actions methodu kullanıldıgında kullanılması tavsiye edilir.
                 perform();
 
 
