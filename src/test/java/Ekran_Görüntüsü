@@ -1,0 +1,8 @@
+                --------Interview------------------
+          /*
+            Selenium tum ekran goruntusu nasil alinir?
+            -tum ekran goruntusu selenium'dan gelen getScreenshotAs method'u ile alinir
+            -getScreenshotAs method'u Selenium'daki TakeScreenshot API' indan gelir.
+           */
+
+           ----------------------------------------------------------------------------

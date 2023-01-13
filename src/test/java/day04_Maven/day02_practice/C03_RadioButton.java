@@ -1,4 +1,4 @@
-package day02_practice;
+package day04_Maven.day02_practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
