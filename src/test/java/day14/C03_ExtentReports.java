@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import utlilities.TestBase;
 
 import java.text.SimpleDateFormat;
@@ -42,8 +43,27 @@ public class C03_ExtentReports extends TestBase {
             extentHtmlReporter.config().setReportName("Regresion Test Sonucu ");
         //******************* RAPOR AYARLARI BITTI **************
 
-        //******Raporu projeme eklemek için alttakini yapıyoruz**************
+        //******Raporu projeye ekliyoruz**************
         extentReports.attachReporter(extentHtmlReporter);
+        //Extent Test objesini olustur.
+        extentTest= extentReports.createTest("Extent Report Login Test","Smoke Test Raporu");
+        //TUM AYARLAR BITTI.EXTENT TEST OBJESİ İLE LOGLAMA (RAPORA YAZDIRMA) ISLEMİNİ YAPABİLİRİZ
+        extentTest.pass("Kullanıcı Ana Sayfaya gider");
+        driver.get("https://www.techproeducation.com");
+
+        //LMS SAYFASINA GİDELİM
+        extentTest.pass("Kullanıcı LMS sayfasına gider");
+        driver.findElement(By.linkText("LMS LOGIN")).click();
+        //TEST BİTTİ
+        extentTest.pass("Test Basari ile Gerceklesti");
+
+
+
+        //Raporu gostermek icin.Raporun olusması icin bu adım zorunludur
+        extentReports.flush();
+
+
+
 
     }
 
