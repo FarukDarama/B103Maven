@@ -48,11 +48,11 @@ public class C01_ExtentReport2  {
     @Test
     public void extentReportsTest() {
      extentTest.pass("PASS");
-        extentTest.info("Bilgilendirme notu");
-        extentTest.fail("FAILED");
-        extentTest.warning("UYARI MESAJI VEREBLIRIZ");
-        extentTest.skip("ATLAMA MESAJI");
-        extentTest.fatal("SISTEM COKUS HATASI");
+     extentTest.info("Bilgilendirme notu");
+     extentTest.fail("FAILED");
+     extentTest.warning("UYARI MESAJI VEREBLIRIZ");
+     extentTest.skip("ATLAMA MESAJI");
+     extentTest.fatal("SISTEM COKUS HATASI");
 
 
 
