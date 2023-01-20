@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -206,6 +207,55 @@ public abstract class TestBase {
         String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+"image.png";
         FileUtils.copyFile(image,new File(path));
     }
+
+     //SCROLLINTOVIEWJS
+    public  void scrollIntoViewJS(WebElement element ){
+       JavascriptExecutor js =(JavascriptExecutor)driver;
+       js.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+
+    //    SAYFANIN EN ALTINA IN
+    //    Bu method ile sayfanin en altina inebiliriz
+    public void scrollEndJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+    //    Bu metot ile sayfanin en ustune cikabiliriz
+    public void scrollTopJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+    //    Bu metot ile belirli bir elemente JS executor ile tiklanabilir
+    public void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",element);
+    }
+
+    //girmiş oldugun metni elemente yazdırır
+    //BU METHOD sendKeys() methoduna alternatifdir.
+    public void typeWithJS(WebElement element,String metin){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+metin+"')",element);
+
+
+    }
+    //    input elementindeki degerleri(value) al
+    //   Belirli bir WebElement'in id değerini String olarak alır ve value attribute değerini String olarak döndürür
+    //    return
+    //    document HTML'E GIT
+    //    .getElementById('" + idOfElement + "') ID'si VERILEN ELEMENTI BUL
+    //    .value")
+    //    .toString();
+    public void getValueByJS(String idOfElement){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        String metin =   js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
+        System.out.println("Kutudaki deger: "+metin);
+        //        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
+        //             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
+        //             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
+    }
+
+
 
 
 
