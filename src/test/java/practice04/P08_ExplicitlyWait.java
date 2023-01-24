@@ -44,13 +44,16 @@ public class P08_ExplicitlyWait extends TestBase {
 
         //https://automationfc.github.io/dynamic-loading/ sayfasına gidelim
         driver.get("https://automationfc.github.io/dynamic-loading/");
+        extentTest.info("Url ye gidildi");
         WebElement startButton = driver.findElement(By.xpath("//*[text()='Start']"));
         //Start button'nuna basalım
         startButton.click();
+        extentTest.info("Start Butonuna basıldı");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[text()='Loading... ']")));
         //Hello World! yazısının çıktığını doğrulayalım
         assert driver.findElement(By.xpath("//*[text()='Hello World!']")).isDisplayed();
+        extentTest.info("Hello World yazısı dogrulandı");
 
 
 
